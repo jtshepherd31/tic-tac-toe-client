@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+  <html>
     <head>
       <title>Example</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,59 +14,61 @@
 
     <body>
       <div class="sign-in-box">
-          <!-- <form id="sign-in">
-            <h2>Sign In!</h2>
-            <input name="credentials[username]"  required type="text" placeholder="Username"/>
-            <input name="credentials[password]" required type="text" placeholder="Password"/>
-            <br>
-            <button type="submit">Submit</button>
-          </form> -->
+        <section id="before-sign-in">
           <form id="sign-in">
-            <h3>Sign In!</h3>
-            <div class="form-group">
-                <input name="credentials[email]" type="text" class="form-control" placeholder="Email">
-            </div>
-            <div class="form-group">
-                <input name="credentials[password]" type="password" class="form-control" placeholder="Password">
-            </div>
-            <div class="form-group">
-              <div class="col-sm-offset-2 col-sm-10">
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> Remember me
-                  </label>
-                </div>
+            <h4>Sign In!</h4>
+              <div class="form-group">
+                  <input name="credentials[email]" required type="text" class="form-control" placeholder="Email">
               </div>
-            </div>
-            <div class="form-group">
-              <button class="submit-button" type="submit">Sign in</button>
-            </div>
-          </form>
+              <div class="form-group">
+                  <input name="credentials[password]" required type="password" class="form-control" placeholder="Password">
+              </div>
+              <div class="form-group">
+                <button class="submit-button" type="submit">Sign in</button>
+              </div>
 
-          <!-- <form id="sign-up">
-            <h2>Sign Up!</h2>
-            <input name="credentials[username]" required type="text" placeholder="Username"/>
-            <input name="credentials[password]" required type="text" placeholder="Password"/>
-            <input name="credentials[password-confirmation]" required type="text" placeholder="Confirm Password"/>
-            <br>
-            <button class="submit-button" type="submit">Submit</button>
-          </form> -->
-          <form id="sign-up">
-              <h3>Sign Up!</h3>
+            </form>
+            <form id="sign-up">
+              <h4>Sign Up!</h4>
               <div class="form-group">
-                  <input name="credentials[email]" type="text" class="form-control" placeholder="Email">
+                <input name="credentials[email]" required type="text" class="form-control" placeholder="Email">
               </div>
               <div class="form-group">
-                  <input name="credentials[password]" type="password" class="form-control" placeholder="Password">
+                <input name="credentials[password]" required type="password" class="form-control" placeholder="Password">
               </div>
               <div class="form-group">
-                  <input name="credentials[password_confirmation]" type="password" class="form-control" placeholder="Confirm Password">
+                <input name="credentials[password_confirmation]" type="password" class="form-control" placeholder="Confirm Password">
+              </div>
+            <div class="form-group">
+              <button class="submit-button" type="submit">Sign up</button>
+            </div>
+            </form>
+          </section>
+
+          <section id="after-sign-in">
+            <form id="change-password">
+              <h4>Change Password</h4>
+              <div class="form-group">
+                  <input name="passwords[old]" required type="password" class="form-control" placeholder="Old Password">
               </div>
               <div class="form-group">
-                <button class="submit-button" type="submit">Sign up</button>
+                  <input name="passwords[new]" required type="password" class="form-control" placeholder="New Password">
+              </div>
+              <div class="form-group">
+                <button class="submit-button" type="submit">Submit</button>
+              </div>
+
+              <p id="messaging"></p>
+
+            </form>
+            <form id="sign-out">
+              <div class="form-group">
+                <button class="submit-button sign-out-button" type="submit">Sign Out</button>
               </div>
             </form>
-      </div>
+          </section>
+        </div>
+
       <div class="center-panel">
         <section class="game-box-top">
           <h1>Tic Tac Toe</h1>
@@ -94,7 +96,7 @@
         </section>
       </div>
       <div class="session-statistics-box">
-        <h4>Session</h2>
+        <h4>Session</h4>
       </div>
     </body>
 </html>

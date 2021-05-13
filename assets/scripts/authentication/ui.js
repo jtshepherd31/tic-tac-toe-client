@@ -14,7 +14,7 @@ const signUpSuccess = function (res) {
 
 // err = error
 const signUpFailure = function (err) {
-  $('#messaging').text('Failed with status: ' + err.status)
+  $('#messaging').text('Invalid username or password, please try again. Error code: ' + err.status)
 }
 
 const signInSuccess = function (res) {
@@ -38,7 +38,7 @@ const signInSuccess = function (res) {
 }
 
 const signInFailure = function (err) {
-  $('#messaging').text('Failed with status: ' + err.status)
+ß  $('#messaging').text('Invalid username or password, please try again. Error code: ' + err.status)
 }
 
 const changePasswordSuccess = function () {
@@ -54,7 +54,7 @@ const changePasswordFailure = function () {
 
 const signOutSuccess = function () {
   store.user = null
-  $('messaging').text('Signed Out Successfully!')
+  $('#messaging').text('Signed Out Successfully!')
 
   // Display the "before sign in" elements
   $('#before-sign-in').show()
