@@ -11,7 +11,41 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
+
     <body>
-      <h1>Browser Template</h1>
+      <div class="sign-in-box">
+        <h2>Sign In!</h2>
+          <input type="text" placeholder="Username"/>
+          <button type="submit">Submit</button>
+        </div>
+      <div class="center-panel">
+        <section class="game-box-top">
+          <h1>Tic Tac Toe</h1>
+        </section>
+        <section class="game-box">
+          <section class="game-parameter row">
+              <div class="game-board col-4"></div>
+              <div class="game-board mid-col col-4"></div>
+              <div class="game-board col-4"></div>
+              <div class="game-board mid-row col-4"></div>
+              <div class="game-board mid-col mid-row col-4"></div>
+              <div class="game-board mid-row col-4"></div>
+              <div class="game-board col-4"></div>
+              <div class="game-board mid-col col-4"></div>
+              <div class="game-board col-4"></div>
+          </section>
+        </section>
+        <section class="game-box-bottom">
+          <div class="indicator-boxes">
+            <section class="row">
+              <h2 class="player-indicators">Player 1</h2>
+              <h2 class="player-indicators">Player 2</h2>
+            </section>
+          </div>
+        </section>
+      </div>
+      <div class="session-statistics-box">
+        <h2>Session</h2>
+      </div>
     </body>
 </html>

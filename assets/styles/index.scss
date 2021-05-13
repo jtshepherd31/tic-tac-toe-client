@@ -1,1 +1,81 @@
 @import '~bootstrap/scss/bootstrap';
+
+
+body {
+  background-color: #7CB7AF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.title {
+  text-align: center;
+}
+
+div.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+}
+.session-statistics-box, .sign-in-box {
+  height: 800px;
+  width: 300px;
+  text-align: center;
+  border: 2px black solid;
+  padding: 10px;
+  background-color: #41B3A3;
+}
+
+.game-box-top {
+  text-align: center;
+}
+
+.game-box {
+  border: 2px black solid;
+  height: 500px;
+  width: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #41B3A3;
+}
+
+.game-parameter {
+  height: 300px;
+  width: 300px;
+
+}
+
+.game-board.mid-col {
+  // border-width: 0px 5px 0px 5px;
+  border-left: 5px solid white;
+  border-right: 5px solid white;
+}
+
+.game-board.mid-row {
+  border-top: 5px solid white;
+  border-bottom: 5px solid white;
+}
+
+
+.indicator-boxes {
+  margin: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.player-indicators {
+  border: 2px solid black;
+  margin: 15px;
+  width: 300px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #E8A87C;
+}
+// accent colors: #E27D60, #89CFF0, #E8A87C, #C38D9E, #41B3A3
