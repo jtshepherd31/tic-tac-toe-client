@@ -2,12 +2,11 @@
 
 
 body {
-  background-color: #7CB7AF;
+  background-color: #efefef;
   display: flex;
   justify-content: center;
   align-items: center;
-  justify-content: space-around;
-  width: 100%;
+  justify-content: space-between;
 }
 
 
@@ -26,9 +25,10 @@ div.row {
   height: 800px;
   width: 300px;
   text-align: center;
-  border: 2px #68ddcc solid;
+  // border: 2px #68ddcc solid;
   padding: 10px;
-  background-color: #41B3A3;
+  background-color: #a9a9a9;
+  margin-left: 0;
 }
 
 #sign-in {
@@ -43,23 +43,28 @@ div.row {
 
 .submit-button {
   border-radius: 8px;
-  background-color: #E27D60;
+  background-color: #ff383f;
   color: white;
-  border-color: #E27D60;
+  border-color: #ff383f;
 }
+
+// .messaging {
+//   background-color: #68ddcc;
+//   border: 2px solid white;
+// }
 
 .game-box-top {
   text-align: center;
 }
 
 .game-box {
-  border: 2px #68ddcc solid;
+  // border: 2px #68ddcc solid;
   height: 500px;
   width: 700px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #41B3A3;
+  background-color: #a9a9a9;
 }
 
 .game-parameter {
@@ -97,4 +102,10 @@ div.row {
   align-items: center;
   background-color: #E8A87C;
 }
+
+#after-sign-in {
+  display: none;
+}
+
+
 // accent colors: #E27D60, #89CFF0, #E8A87C, #C38D9E, #41B3A3

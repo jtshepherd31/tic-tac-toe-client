@@ -46,7 +46,42 @@
           </section>
 
           <section id="after-sign-in">
-            <form id="change-password">
+            <div>
+              <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                Launch demo modal
+              </button>
+              <div class="modal fade" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title">Modal title</h4>
+                    </div>
+                    <div class="modal-body">
+                      <p>
+                        <form id="change-password">
+                        <h4>Change Password</h4>
+                        <div class="form-group">
+                            <input name="passwords[old]" required type="password" class="form-control" placeholder="Old Password">
+                        </div>
+                        <div class="form-group">
+                            <input name="passwords[new]" required type="password" class="form-control" placeholder="New Password">
+                        </div>
+                        <div class="form-group">
+                          <button class="submit-button" type="submit">Submit</button>
+                        </div>
+                      </form>
+                    </p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                  </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+              </div><!-- /.modal -->
+            </div>
+            <!-- <form id="change-password">
               <h4>Change Password</h4>
               <div class="form-group">
                   <input name="passwords[old]" required type="password" class="form-control" placeholder="Old Password">
@@ -58,15 +93,16 @@
                 <button class="submit-button" type="submit">Submit</button>
               </div>
 
-              <p id="messaging"></p>
-
-            </form>
+            </form> -->
             <form id="sign-out">
               <div class="form-group">
                 <button class="submit-button sign-out-button" type="submit">Sign Out</button>
               </div>
             </form>
           </section>
+          <div class="messaging">
+            <p id="messaging"></p>
+          </div>
         </div>
 
       <div class="center-panel">
@@ -75,15 +111,15 @@
         </section>
         <section class="game-box">
           <section class="game-parameter row">
-              <div class="game-board col-4"></div>
-              <div class="game-board mid-col col-4"></div>
-              <div class="game-board col-4"></div>
-              <div class="game-board mid-row col-4"></div>
-              <div class="game-board mid-col mid-row col-4"></div>
-              <div class="game-board mid-row col-4"></div>
-              <div class="game-board col-4"></div>
-              <div class="game-board mid-col col-4"></div>
-              <div class="game-board col-4"></div>
+              <div class="game-board box1 col-4"></div>
+              <div class="game-board box2 mid-col col-4"></div>
+              <div class="game-board box3 col-4"></div>
+              <div class="game-board box4 mid-row col-4"></div>
+              <div class="game-board box5 mid-col mid-row col-4"></div>
+              <div class="game-board box6 mid-row col-4"></div>
+              <div class="game-board box7 col-4"></div>
+              <div class="game-board box8 mid-col col-4"></div>
+              <div class="game-board box9 col-4"></div>
           </section>
         </section>
         <section class="game-box-bottom">

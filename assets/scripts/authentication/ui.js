@@ -38,7 +38,8 @@ const signInSuccess = function (res) {
 }
 
 const signInFailure = function (err) {
-ß  $('#messaging').text('Invalid username or password, please try again. Error code: ' + err.status)
+  $('#messaging').text('Invalid username or password, please try again. Error code: ' + err.status)
+  $('#messaging').css('color', 'black')
 }
 
 const changePasswordSuccess = function () {
@@ -48,6 +49,7 @@ const changePasswordSuccess = function () {
 
 const changePasswordFailure = function () {
   $('#messaging').text('Change Password Failed')
+  $('#messaging').css('color', 'black')
 }
 
 // err = error
