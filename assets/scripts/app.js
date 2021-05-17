@@ -14,8 +14,8 @@ $(() => {
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('submit', authEvents.onSignOut)
-  // $('.modal').on('click', authEvents.onShowChangePassword)
 
   // Game board events
   $('.game-board').click(gameEvents.onUserSelection)
+  $('.new-game-button').click(gameEvents.newGame)
 })

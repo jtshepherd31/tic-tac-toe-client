@@ -3,7 +3,7 @@
 const player1 = 'X'
 const player2 = 'O'
 let currentPlayer = player1
-const gameIndex = ['', '', '', '', '', '', '', '', '']
+let gameIndex = ['', '', '', '', '', '', '', '', '']
 const winningConditions = [
   [0, 1, 2],
   [3, 4, 5],
@@ -22,7 +22,14 @@ const onUserSelection = function (event) {
     $('#' + indexSelection).html(`<p class='icons'>${currentPlayer}</p>`)
     gameIndex[indexSelection] = currentPlayer
     checkResults()
+
     currentPlayer = currentPlayer === player1 ? player2 : player1
+    $('.player-indicators').toggleClass('current-player')
+  }
+  if (gameResult) {
+    resetGame()
+    resetPlayer()
+    newGame()
   }
 }
 
@@ -40,7 +47,32 @@ const checkResults = function () {
   }
 }
 
+const newGame = function () {
+  $('.new-game').toggleClass('inactive-screen')
+  $('.game-parameter').toggleClass('inactive-screen')
+}
+
+const resetPlayer = function () {
+  if (currentPlayer === player2) {
+    $('.player-indicators').toggleClass('current-player')
+    currentPlayer = player1
+  }
+}
+
+const resetGame = function () {
+  if (gameResult) {
+    $('.game-message').text(gameResult + ' Start New Game!')
+  } else {
+    $('.game-message').text('Start New Game!')
+  }
+  $('.game-board').empty()
+  gameResult = null
+  gameIndex = ['', '', '', '', '', '', '', '', '']
+}
+
 module.exports = {
-  // onSignUp: onSignUp
-  onUserSelection
+  onUserSelection,
+  newGame,
+  resetPlayer,
+  resetGame
 }

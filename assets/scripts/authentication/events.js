@@ -50,7 +50,6 @@ const onChangePassword = function (event) {
   event.preventDefault()
   // get data
   const data = getFormFields(event.target)
-  console.log(data)
 
   // api request
   api.changePassword(data)

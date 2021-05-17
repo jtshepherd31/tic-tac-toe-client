@@ -4,11 +4,9 @@
 body {
   background-color: #efefef;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
-
-
 
 .title {
   text-align: center;
@@ -24,11 +22,10 @@ div.row {
   height: 800px;
   width: 300px;
   text-align: center;
-  // border: 2px #68ddcc solid;
   padding: 10px;
   background-color: #a9a9a9;
   margin-left: 0;
-  color: white
+  color: #efefef;
 }
 
 #sign-in {
@@ -123,13 +120,16 @@ div.row {
   align-items: center;
   background-color: #ff383f;
   color: white;
+  opacity: 65%;
 }
 
 #after-sign-in {
   display: none;
 }
 
-#after-sign-in
+.inactive-screen {
+  display: none;
+}
 
 .modal-content {
   background-color: #a9a9a9;
@@ -152,4 +152,13 @@ div.row {
   line-height:110px;
   color: #ff383f;
 
+}
+
+.current-player {
+  background-color: #ff383f;
+  opacity: 100%;
+}
+
+.new-game-button:disabled {
+  opacity: 50%;
 }

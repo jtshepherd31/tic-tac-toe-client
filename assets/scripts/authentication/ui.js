@@ -1,6 +1,7 @@
 'use strict'
 
 const store = require('./../store')
+const gameEvents = require('./../game-board/events')
 
 // res = response
 const signUpSuccess = function (res) {
@@ -9,7 +10,7 @@ const signUpSuccess = function (res) {
   $('#sign-up').trigger('reset')
 
   // messaging
-  $('#messaging').text('Welcome, ' + res.user.email + '. Please sign in using your new credentials.')
+  $('#messaging').text('Welcome New User! Please sign in using your new credentials.')
 }
 
 // err = error
@@ -30,12 +31,14 @@ const signInSuccess = function (res) {
   store.user = res.user
 
   // messaging
-  $('#messaging').text('Signed in! Welcome, ' + res.user.email)
+  $('#messaging').text('Signed in! Welcome!')
 
   // Display the "after sign in" elements
   $('#after-sign-in').show()
   // Hide the "before sign in" elements
   $('#before-sign-in').hide()
+
+  $('.new-game-button').removeAttr('disabled')
 }
 
 const signInFailure = function (err) {
@@ -63,6 +66,13 @@ const signOutSuccess = function () {
   $('#before-sign-in').show()
   // Hide the "after sign in" elements
   $('#after-sign-in').hide()
+  if ($('.new-game').hasClass('inactive-screen')) {
+    $('.new-game').toggleClass('inactive-screen')
+    $('.game-parameter').toggleClass('inactive-screen')
+  }
+  gameEvents.resetGame()
+  gameEvents.resetPlayer()
+  $('.new-game-button').attr('disabled', 'true')
 }
 
 const signOutFailure = function (err) {

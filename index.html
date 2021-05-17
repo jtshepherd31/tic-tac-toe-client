@@ -33,6 +33,7 @@
               <div class="form-group">
                 <input name="credentials[email]" required type="text" class="form-control" placeholder="Email">
               </div>
+
               <div class="form-group">
                 <input name="credentials[password]" required type="password" class="form-control" placeholder="Password">
               </div>
@@ -47,7 +48,7 @@
 
           <section id="after-sign-in">
 
-            <button type="button" class="btn btn-primary btn-lg submit-button" data-toggle="modal" data-target="#myModal">
+            <button type="button" class="btn btn-primary btn-lg submit" data-toggle="modal" data-target="#myModal">
               Change Password
             </button>
 
@@ -81,19 +82,6 @@
               </div>
             </div>
 
-            <!-- <form id="change-password">
-              <h4>Change Password</h4>
-              <div class="form-group">
-                  <input name="passwords[old]" required type="password" class="form-control" placeholder="Old Password">
-              </div>
-              <div class="form-group">
-                  <input name="passwords[new]" required type="password" class="form-control" placeholder="New Password">
-              </div>
-              <div class="form-group">
-                <button class="submit-button" type="submit">Submit</button>
-              </div>
-            </form> -->
-
             <form id="sign-out">
               <div class="form-group">
                 <button class="submit-button sign-out-button" type="submit">Sign Out</button>
@@ -110,7 +98,11 @@
           <h1>Tic Tac Toe</h1>
         </section>
         <section class="game-box">
-          <section class="game-parameter row">
+          <section class="new-game">
+            <h1 class="game-message">Start A Game!</h1>
+            <button class="new-game-button submit-button" disabled>Start Game</button>
+          </section>
+          <section class="game-parameter inactive-screen row">
               <div class="game-board box1 col-4" id="0"></div>
               <div class="game-board box2 mid-col col-4" id="1"></div>
               <div class="game-board box3 col-4" id="2"></div>
@@ -125,8 +117,8 @@
         <section class="game-box-bottom">
           <div class="indicator-boxes">
             <section class="row">
-              <h2 class="player-indicators">Player 1</h2>
-              <h2 class="player-indicators">Player 2</h2>
+              <h2 class="player-indicators current-player" id="player1">Player 1</h2>
+              <h2 class="player-indicators" id="player2">Player 2</h2>
             </section>
           </div>
         </section>
