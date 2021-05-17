@@ -1,10 +1,7 @@
 'use strict'
 
-const api = require('./api')
-const ui = require('./ui')
-
-const player1 = 'x'
-const player2 = 'o'
+const player1 = 'X'
+const player2 = 'O'
 let currentPlayer = player1
 const gameIndex = ['', '', '', '', '', '', '', '', '']
 const winningConditions = [
@@ -22,7 +19,7 @@ let gameResult
 const onUserSelection = function (event) {
   const indexSelection = event.target.id
   if (gameIndex[indexSelection] === '' && !gameResult) {
-    $('#' + indexSelection).text(currentPlayer)
+    $('#' + indexSelection).html(`<p class='icons'>${currentPlayer}</p>`)
     gameIndex[indexSelection] = currentPlayer
     checkResults()
     currentPlayer = currentPlayer === player1 ? player2 : player1

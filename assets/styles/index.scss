@@ -1,12 +1,11 @@
 @import '~bootstrap/scss/bootstrap';
-
+@import url('https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap');
 
 body {
   background-color: #efefef;
   display: flex;
   justify-content: center;
   align-items: center;
-  justify-content: space-between;
 }
 
 
@@ -29,6 +28,7 @@ div.row {
   padding: 10px;
   background-color: #a9a9a9;
   margin-left: 0;
+  color: white
 }
 
 #sign-in {
@@ -39,6 +39,11 @@ div.row {
 
 #sign-up {
   position: relative;
+}
+
+#sign-out {
+  display: flex;
+  align-self: baseline;
 }
 
 .submit-button {
@@ -54,7 +59,16 @@ div.row {
 // }
 
 .game-box-top {
-  text-align: center;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-box-top h1 {
+  font-family: 'Finger Paint', cursive;
+  font-size: 80px;
+  color: #ff383f;
 }
 
 .game-box {
@@ -70,7 +84,14 @@ div.row {
 .game-parameter {
   height: 400px;
   width: 400px;
+}
 
+.game-board {
+  margin: 0;
+  height: 133.33px;
+  width: 133.33px;
+  max-width: 133.33px;
+  max-height: 133.33px;
 }
 
 .game-board.mid-col {
@@ -100,12 +121,35 @@ div.row {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #E8A87C;
+  background-color: #ff383f;
+  color: white;
 }
 
 #after-sign-in {
   display: none;
 }
 
+#after-sign-in
 
-// accent colors: #E27D60, #89CFF0, #E8A87C, #C38D9E, #41B3A3
+.modal-content {
+  background-color: #a9a9a9;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #ff383f !important;
+    border-radius: 8px !important;
+    background-color: #ff383f !important;
+    color: white !important;
+    border-color: #ff383f !important;
+}
+
+.icons {
+  font-size: 128px;
+  font-family: 'Finger Paint', cursive;
+  max-width: 128px;
+  max-height: 128px;
+  text-align: inherit;
+  line-height:110px;
+  color: #ff383f;
+
+}

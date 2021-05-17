@@ -41,11 +41,16 @@ const onSignIn = function (event) {
     .catch(ui.signInFailure)
 }
 
+const onShowChangePassword = function (event) {
+  $('#myModal').modal('toggle')
+}
+
 const onChangePassword = function (event) {
   // prevent the preventDefault
   event.preventDefault()
   // get data
   const data = getFormFields(event.target)
+  console.log(data)
 
   // api request
   api.changePassword(data)
@@ -67,5 +72,6 @@ module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
-  onSignOut
+  onSignOut,
+  onShowChangePassword
 }

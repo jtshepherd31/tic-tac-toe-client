@@ -9,12 +9,13 @@ const signUpSuccess = function (res) {
   $('#sign-up').trigger('reset')
 
   // messaging
-  $('#messaging').text('Welcome, ' + res.user.email)
+  $('#messaging').text('Welcome, ' + res.user.email + '. Please sign in using your new credentials.')
 }
 
 // err = error
 const signUpFailure = function (err) {
   $('#messaging').text('Invalid username or password, please try again. Error code: ' + err.status)
+  $('#messaging').css('color', 'red')
 }
 
 const signInSuccess = function (res) {
@@ -39,7 +40,7 @@ const signInSuccess = function (res) {
 
 const signInFailure = function (err) {
   $('#messaging').text('Invalid username or password, please try again. Error code: ' + err.status)
-  $('#messaging').css('color', 'black')
+  $('#messaging').css('color', 'red')
 }
 
 const changePasswordSuccess = function () {
@@ -49,7 +50,7 @@ const changePasswordSuccess = function () {
 
 const changePasswordFailure = function () {
   $('#messaging').text('Change Password Failed')
-  $('#messaging').css('color', 'black')
+  $('#messaging').css('color', 'red')
 }
 
 // err = error
