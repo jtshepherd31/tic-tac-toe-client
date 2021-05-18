@@ -13,120 +13,122 @@
     </head>
 
     <body>
-      <div class="sign-in-box">
-        <section id="before-sign-in">
-          <form id="sign-in">
-            <h4>Sign In!</h4>
-            <hr width="90%" color="#2eb2ff">
-              <div class="form-group">
-                  <input name="credentials[email]" required type="text" class="form-control" placeholder="Email">
-              </div>
-              <div class="form-group">
-                  <input name="credentials[password]" required type="password" class="form-control" placeholder="Password">
-              </div>
-              <div class="form-group">
-                <button class="submit-button" type="submit">Sign in</button>
-              </div>
+      <div class="full-page">
+        <div class="left-panel">
+          <div class="sign-in-box">
+            <section id="before-sign-in">
+              <form id="sign-in">
+                <h4>Sign In!</h4>
+                <hr width="90%" color="#2eb2ff">
+                  <div class="form-group">
+                      <input name="credentials[email]" required type="text" class="form-control" placeholder="Email">
+                  </div>
+                  <div class="form-group">
+                      <input name="credentials[password]" required type="password" class="form-control" placeholder="Password">
+                  </div>
+                  <div class="form-group">
+                    <button class="submit-button" type="submit">Sign in</button>
+                  </div>
 
-            </form>
-            <form id="sign-up">
-              <h4>Sign Up!</h4>
-              <hr width="90%" color="#ff383f">
-              <div class="form-group">
-                <input name="credentials[email]" required type="text" class="form-control" placeholder="Email">
-              </div>
+                </form>
+                <form id="sign-up">
+                  <h4>Sign Up!</h4>
+                  <hr width="90%" color="#2eb2ff">
+                  <div class="form-group">
+                    <input name="credentials[email]" required type="text" class="form-control" placeholder="Email">
+                  </div>
 
-              <div class="form-group">
-                <input name="credentials[password]" required type="password" class="form-control" placeholder="Password">
-              </div>
-              <div class="form-group">
-                <input name="credentials[password_confirmation]" type="password" class="form-control" placeholder="Confirm Password">
-              </div>
-            <div class="form-group">
-              <button class="submit-button" type="submit">Sign up</button>
+                  <div class="form-group">
+                    <input name="credentials[password]" required type="password" class="form-control" placeholder="Password">
+                  </div>
+                  <div class="form-group">
+                    <input name="credentials[password_confirmation]" type="password" class="form-control" placeholder="Confirm Password">
+                  </div>
+                <div class="form-group">
+                  <button class="submit-button" type="submit">Sign up</button>
+                </div>
+                </form>
+              </section>
             </div>
-            </form>
-          </section>
+            <div class="messaging">
+              <p id="messaging"></p>
+            </div>
 
-          <section id="after-sign-in">
+            <section class="signed-in" id="after-sign-in">
 
-            <button type="button" class="btn btn-primary btn-lg submit" data-toggle="modal" data-target="#myModal">
-              Change Password
-            </button>
+              <button type="button" class="submit-button" data-toggle="modal" data-target="#myModal">
+                Change Password
+              </button>
 
-            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel"></h4>
-                  </div>
-                  <div class="modal-body">
-                    <form id="change-password">
-                      <div class="form-group">
-                          <h4>Change Password</h4>
-                          <hr width="90%" color="#ff383f">
-                          <input name="passwords[old]" required type="password" class="form-control" placeholder="Old Password">
-                      </div>
-                      <div class="form-group">
-                          <input name="passwords[new]" required type="password" class="form-control" placeholder="New Password">
-                      </div>
-                      <div class="form-group">
-                        <button class="submit-button" type="submit">Submit</button>
-                      </div>
-                    </form>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h4 class="modal-title" id="modal-title">Change Password</h4>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="change-password">
+                        <div class="form-group">
+                            <input name="passwords[old]" required type="password" class="form-control" placeholder="Old Password">
+                        </div>
+                        <div class="form-group">
+                            <input name="passwords[new]" required type="password" class="form-control" placeholder="New Password">
+                        </div>
+                        <div class="form-group">
+                          <button class="submit-button" type="submit">Submit</button>
+                        </div>
+                      </form>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <form id="sign-out">
-              <div class="form-group">
-                <button class="submit-button sign-out-button" type="submit">Sign Out</button>
-              </div>
-            </form>
-          </section>
-          <div class="messaging">
-            <p id="messaging"></p>
-          </div>
-        </div>
-
-      <div class="center-panel">
-        <section class="game-box-top">
-          <h1>Tic Tac Toe</h1>
-        </section>
-        <section class="game-box">
-          <section class="new-game">
-            <h1 class="game-message">Start A Game!</h1>
-            <button class="new-game-button submit-button" disabled>Start Game</button>
-          </section>
-          <section class="game-parameter inactive-screen row">
-              <div class="game-board box1 col-4" id="0"></div>
-              <div class="game-board box2 mid-col col-4" id="1"></div>
-              <div class="game-board box3 col-4" id="2"></div>
-              <div class="game-board box4 mid-row col-4" id="3"></div>
-              <div class="game-board box5 mid-col mid-row col-4" id="4"></div>
-              <div class="game-board box6 mid-row col-4" id="5"></div>
-              <div class="game-board box7 col-4" id="6"></div>
-              <div class="game-board box8 mid-col col-4" id="7"></div>
-              <div class="game-board box9 col-4" id="8"></div>
-          </section>
-        </section>
-        <section class="game-box-bottom">
-          <div class="indicator-boxes">
-            <section class="row">
-              <h2 class="player-indicators current-player" id="player1">Player 1</h2>
-              <h2 class="player-indicators" id="player2">Player 2</h2>
+              <form id="sign-out">
+                <div class="form-group">
+                  <button class="submit-button sign-out-button" type="submit">Sign Out</button>
+                </div>
+              </form>
             </section>
           </div>
-        </section>
-      </div>
-      <div class="session-statistics-box">
-        <h4>Session</h4>
+        <div class="center-panel">
+          <section class="game-box-top">
+            <h1>Tic Tac Toe</h1>
+          </section>
+          <section class="game-box">
+            <section class="new-game">
+              <h1 class="game-message">Start A Game!</h1>
+              <button class="new-game-button submit-button" disabled>Start Game</button>
+            </section>
+            <section class="game-parameter inactive-screen row">
+                <div class="game-board box1 col-4" id="0"></div>
+                <div class="game-board box2 mid-col col-4" id="1"></div>
+                <div class="game-board box3 col-4" id="2"></div>
+                <div class="game-board box4 mid-row col-4" id="3"></div>
+                <div class="game-board box5 mid-col mid-row col-4" id="4"></div>
+                <div class="game-board box6 mid-row col-4" id="5"></div>
+                <div class="game-board box7 col-4" id="6"></div>
+                <div class="game-board box8 mid-col col-4" id="7"></div>
+                <div class="game-board box9 col-4" id="8"></div>
+            </section>
+          </section>
+          <section class="game-box-bottom">
+            <div class="indicator-boxes">
+              <section class="row">
+                <h2 class="player-indicators current-player" id="player1">Player 1</h2>
+                <h2 class="player-indicators" id="player2">Player 2</h2>
+              </section>
+            </div>
+          </section>
+        </div>
+        <div class="right-panel">
+          <div class="session-statistics-box">
+            <div class="session-statistics">
+              <h4>Session</h4>
+              <hr width="90%" color="#2eb2ff">
+            </div>
+          </div>
+        </div>
       </div>
     </body>
 </html>

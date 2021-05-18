@@ -43,7 +43,7 @@ const checkResults = function () {
     const value2 = gameIndex[condition[1]]
     const value3 = gameIndex[condition[2]]
     if (value1 === value2 && value2 === value3 && value1 !== '' && value2 !== '' && value3 !== '') {
-      gameResult = currentPlayer.name + ' Won!'
+      gameResult = currentPlayer.name + ' Wins!'
     }
   })
   if (gameIndex.indexOf('') === -1 && !gameResult) {
