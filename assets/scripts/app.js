@@ -17,5 +17,8 @@ $(() => {
 
   // Game board events
   $('.game-board').click(gameEvents.onUserSelection)
-  $('.new-game-button').click(gameEvents.newGame)
+  $('.new-game-button').click(function () {
+    gameEvents.newGame()
+    gameEvents.onStartGame()
+  })
 })

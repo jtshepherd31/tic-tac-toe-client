@@ -8,6 +8,16 @@ curl "${API}${URL_PATH}" \
   --request POST \
   --header "Content-Type: application/json" \
   --header "Authorization: Bearer ${TOKEN}" \
-  --data '{}'
+  --data '{
+    {
+      "game": {
+        "cells": "'"${CELLS}"'",
+        "over": "'"${OVER}"'",
+        "owner": "'"${OWNER}"'",
+        "createdAt": "'"${CREATEDAT}"'",
+        "updatedAt": "'"${UPDATEDAT}"'",
+      }
+    }
+  }'
 
 echo

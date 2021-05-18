@@ -1,7 +1,10 @@
 'use strict'
+const store = require('./../store')
+const api = require('./api')
+const ui = require('./ui')
 
-const player1 = 'X'
-const player2 = 'O'
+const player1 = { value: 'X', color: '#ff383f', name: 'Player 1' }
+const player2 = { value: 'O', color: '#2eb2ff', name: 'Player 2' }
 let currentPlayer = player1
 let gameIndex = ['', '', '', '', '', '', '', '', '']
 const winningConditions = [
@@ -19,9 +22,10 @@ let gameResult
 const onUserSelection = function (event) {
   const indexSelection = event.target.id
   if (gameIndex[indexSelection] === '' && !gameResult) {
-    $('#' + indexSelection).html(`<p class='icons'>${currentPlayer}</p>`)
+    $('#' + indexSelection).html(`<p style='color: ${currentPlayer.color}' class='icons'>${currentPlayer.value}</p>`)
     gameIndex[indexSelection] = currentPlayer
     checkResults()
+    onUpdateGame(indexSelection)
 
     currentPlayer = currentPlayer === player1 ? player2 : player1
     $('.player-indicators').toggleClass('current-player')
@@ -39,7 +43,7 @@ const checkResults = function () {
     const value2 = gameIndex[condition[1]]
     const value3 = gameIndex[condition[2]]
     if (value1 === value2 && value2 === value3 && value1 !== '' && value2 !== '' && value3 !== '') {
-      gameResult = currentPlayer + ' Won!'
+      gameResult = currentPlayer.name + ' Won!'
     }
   })
   if (gameIndex.indexOf('') === -1 && !gameResult) {
@@ -70,9 +74,41 @@ const resetGame = function () {
   gameIndex = ['', '', '', '', '', '', '', '', '']
 }
 
+const onStartGame = function (event) {
+  const data = {
+    game: {
+      cells: gameIndex,
+      over: false,
+      owner: store.user._id,
+      createdAt: Date.now(),
+      updatedAt: null
+    }
+  }
+  api.startGame(data)
+    .then(ui.startGameSuccess)
+    .catch(ui.startGameFailure)
+}
+
+const onUpdateGame = function (indexSelection) {
+  const data = {
+    game: {
+      cell: {
+        index: indexSelection,
+        value: currentPlayer.value
+      },
+      over: !!gameResult
+    }
+  }
+  api.updateGame(data, store.game._id)
+  // .then(ui.signOutSuccess)
+  // .catch(ui.updateGameFailure)
+}
+
 module.exports = {
   onUserSelection,
   newGame,
   resetPlayer,
-  resetGame
+  resetGame,
+  onStartGame,
+  onUpdateGame
 }
