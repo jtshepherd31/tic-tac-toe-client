@@ -21,4 +21,5 @@ $(() => {
     gameEvents.newGame()
     gameEvents.onStartGame()
   })
+  $('.menu-icon').click(gameEvents.openMenu)
 })

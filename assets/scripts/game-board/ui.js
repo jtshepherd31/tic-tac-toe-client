@@ -24,10 +24,19 @@ const showAllGamesFailure = function (err) {
   $('#messaging').css('color', 'red')
 }
 
+const getLogSuccess = function (res) {
+  res.games.forEach(game => {
+    const date = new Date(game.createdAt)
+    const isComplete = game.over ? 'Complete' : 'Incomplete'
+    $('.game-log').append(`<li>${date.toDateString()} - <span class='${isComplete.toLowerCase()}'>${isComplete}</span></li>`)
+  })
+}
+
 module.exports = {
   startGameSuccess,
   startGameFailure,
   updateGameFailure,
   showGameFailure,
-  showAllGamesFailure
+  showAllGamesFailure,
+  getLogSuccess
 }

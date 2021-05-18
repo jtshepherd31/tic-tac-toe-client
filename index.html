@@ -1,7 +1,7 @@
 <!DOCTYPE html>
   <html>
     <head>
-      <title>Example</title>
+      <title>Tic Tac Toe</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -50,6 +50,7 @@
                 </form>
               </section>
             </div>
+
             <div class="messaging">
               <p id="messaging"></p>
             </div>
@@ -94,6 +95,11 @@
         <div class="center-panel">
           <section class="game-box-top">
             <h1>Tic Tac Toe</h1>
+            <img class="menu-icon" src="./assets/images/menu-icon.png" />
+          </section>
+          <section class="menu" hidden>
+            <p>Sign in</p>
+            <p>Game Log</p>
           </section>
           <section class="game-box">
             <section class="new-game">
@@ -114,7 +120,7 @@
           </section>
           <section class="game-box-bottom">
             <div class="indicator-boxes">
-              <section class="row">
+              <section class="player-indicator-boxes row">
                 <h2 class="player-indicators current-player" id="player1">Player 1</h2>
                 <h2 class="player-indicators" id="player2">Player 2</h2>
               </section>
@@ -122,10 +128,15 @@
           </section>
         </div>
         <div class="right-panel">
+
           <div class="session-statistics-box">
             <div class="session-statistics">
               <h4>Session</h4>
-              <hr width="90%" color="#2eb2ff">
+              <hr width="90%" color="#2eb2ff"/>
+
+              <ol class="game-log">
+              </ol>
+
             </div>
           </div>
         </div>

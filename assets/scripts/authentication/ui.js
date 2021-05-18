@@ -2,7 +2,6 @@
 
 const store = require('./../store')
 const gameEvents = require('./../game-board/events')
-const api = require('./../game-board/api')
 
 // res = response
 const signUpSuccess = function (res) {
@@ -41,7 +40,7 @@ const signInSuccess = function (res) {
 
   $('.new-game-button').removeAttr('disabled')
 
-  api.getAllGamesLog()
+  gameEvents.getGameLog()
 }
 
 const signInFailure = function (err) {

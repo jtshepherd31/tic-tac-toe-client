@@ -89,6 +89,11 @@ const onStartGame = function (event) {
     .catch(ui.startGameFailure)
 }
 
+const getGameLog = function () {
+  api.getAllGamesLog()
+    .then(ui.getLogSuccess)
+}
+
 const onUpdateGame = function (indexSelection) {
   const data = {
     game: {
@@ -104,11 +109,21 @@ const onUpdateGame = function (indexSelection) {
   // .catch(ui.updateGameFailure)
 }
 
+const openMenu = function () {
+  if ($('.left-panel').css('visibility') === 'collapse') {
+    $('.left-panel').css('visibility', 'visible')
+  } else {
+    $('.left-panel').css('visibility', 'collapse')
+  }
+}
+
 module.exports = {
   onUserSelection,
   newGame,
   resetPlayer,
   resetGame,
   onStartGame,
-  onUpdateGame
+  onUpdateGame,
+  getGameLog,
+  openMenu
 }

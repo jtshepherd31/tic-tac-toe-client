@@ -7,12 +7,6 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-//
-// .full-page {
-//   display: flex;
-//   height: 100%;
-//   width: 100%
-// }
 
 .center-panel {
   width: 60%;
@@ -25,6 +19,10 @@ body {
 
 .title {
   text-align: center;
+}
+
+.menu-icon {
+  display: none;
 }
 
 div.row {
@@ -43,11 +41,18 @@ div.row {
 
 .session-statistics {
   margin-top: 30px;
+  overflow: hidden;
+}
+
+.game-log {
+  height: 600px;
+  overflow: scroll;
+  text-align: left;
 }
 
 #sign-in {
   position: relative;
-  // margin-bottom: 30px;
+  margin-bottom: 30px;
   margin-top: 30px;
 }
 
@@ -64,13 +69,6 @@ div.row {
   height: 30px;
   opacity: 60%;
   transition: 0.4s;
-}
-
-#sign-out {
-  display: flex;
-  align-self: baseline;
-  width: 245.53px;
-  height: 30px;
 }
 
 .game-box-top {
@@ -102,14 +100,13 @@ div.row {
 
 .game-board {
   margin: 0;
-  height: 133.33px;
-  width: 133.33px;
+  height: 100%;
+  width: 100%;
   max-width: 133.33px;
   max-height: 133.33px;
 }
 
 .game-board.mid-col {
-  // border-width: 0px 5px 0px 5px;
   border-left: 5px solid white;
   border-right: 5px solid white;
 }
@@ -145,8 +142,11 @@ div.row {
   transition: 0.4s;
 }
 
-.row {
+.player-indicator-boxes.row {
   height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 #after-sign-in {
@@ -192,8 +192,8 @@ div.row {
 
 .new-game-button:disabled {
   opacity: 50%;
-  background-color: #2eb2ff;
-  border-color: #2eb2ff;
+  background-color: gray;
+  border-color: gray;
 }
 
 #modal-title {
@@ -201,9 +201,9 @@ div.row {
 }
 
 .signed-in {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
+  height: 80%;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .full-page {
@@ -212,12 +212,62 @@ div.row {
   width: 100vw;
 }
 
+.complete {
+  color: lightgreen;
+}
+
+.incomplete {
+  color: #ff383f;
+}
+
+.new-game {
+  text-align: center;
+}
+
 @media only screen and (max-width: 1050px) {
   body {
     background-color: lightblue;
   }
-.session-statistics-box, .sign-in-box {
 
-}
+  .menu-icon {
+    display: inline;
+    height: 35px;
+    position: absolute;
+    top: 1%;
+    right: 1%;
+  }
 
+  .game-box-top h1 {
+    font-size: 45px;
+  }
+
+  .right-panel {
+    display: none;
+  }
+
+  .center-panel {
+    width: 100vw;
+  }
+
+  .left-panel {
+    z-index: 7;
+    position: absolute;
+    background-color: #5f5f5f;
+    bottom: 0;
+    height: 75%;
+    width: 90%;
+    border-radius: 15px 15px 0 0;
+    text-align: center;
+    margin: 0 5%;
+    color: white;
+    visibility: collapse;
+  }
+  .game-box {
+    z-index: -1;
+  }
+
+  .player-indicators {
+    height: 100px;
+    width: 150px;
+  }
 }
