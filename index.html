@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>Tic Tac Toe</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+
+    <body>
+      <div class="full-page">
+
+        <!-- left panel sign in info and total games played -->
+        <div class="left-panel">
+          <div class="sign-in-box">
+            <!-- pages before sign in -->
+            <section id="before-sign-in">
+              <form id="sign-in">
+                <div class="close-button">X</div>
+                <h4>Sign In!</h4>
+                <hr width="90%" color="#2eb2ff">
+                  <div class="form-group">
+                      <input name="credentials[email]" required type="text" class="form-control" placeholder="Email">
+                  </div>
+                  <div class="form-group">
+                      <input name="credentials[password]" required type="password" class="form-control" placeholder="Password">
+                  </div>
+                  <div class="form-group">
+                    <button class="submit-button" type="submit">Sign in</button>
+                  </div>
+
+                </form>
+                <form id="sign-up">
+                  <h4>Sign Up!</h4>
+                  <hr width="90%" color="#2eb2ff">
+                  <div class="form-group">
+                    <input name="credentials[email]" required type="text" class="form-control" placeholder="Email">
+                  </div>
+
+                  <div class="form-group">
+                    <input name="credentials[password]" required type="password" class="form-control" placeholder="Password">
+                  </div>
+                  <div class="form-group">
+                    <input name="credentials[password_confirmation]" type="password" class="form-control" placeholder="Confirm Password">
+                  </div>
+                <div class="form-group">
+                  <button class="submit-button" type="submit">Sign up</button>
+                </div>
+                </form>
+              </section>
+            </div>
+
+            <div class="messaging">
+              <p id="messaging"></p>
+            </div>
+
+            <!-- left panel pages after sign in -->
+            <section class="signed-in" id="after-sign-in">
+              <div class="close-button">X</div>
+              <div class="total-games-box">
+                <h5>Total Games</h5>
+                <hr width="90%" color="#2eb2ff">
+                <h2 class="total-games"></h2>
+              </div>
+              <button type="button" class="submit-button" data-toggle="modal" data-target="#myModal">
+                Change Password
+              </button>
+
+              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h4 class="modal-title" id="modal-title">Change Password</h4>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="change-password">
+                        <div class="form-group">
+                            <input name="passwords[old]" required type="password" class="form-control" placeholder="Old Password">
+                        </div>
+                        <div class="form-group">
+                            <input name="passwords[new]" required type="password" class="form-control" placeholder="New Password">
+                        </div>
+                        <div class="form-group">
+                          <button class="submit-button" type="submit">Submit</button>
+                          <p id="change-password-messaging"></p>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <form id="sign-out">
+                <div class="form-group">
+                  <button class="submit-button sign-out-button" type="submit">Sign Out</button>
+                </div>
+              </form>
+            </section>
+          </div>
+          <!-- center panel with start game and game board -->
+        <div class="center-panel">
+          <section class="game-box-top">
+            <h1>Tic Tac Toe</h1>
+            <img class="menu-icon" src="./assets/images/menu-icon.png" />
+          </section>
+          <section class="menu" hidden>
+            <p>Sign in</p>
+            <p>Game Log</p>
+          </section>
+          <section class="game-box">
+            <section class="new-game">
+              <h1 class="game-message">Please Sign In To Start A Game!</h1>
+              <button class="new-game-button submit-button" disabled>Start Game</button>
+            </section>
+            <section class="game-parameter inactive-screen row">
+                <div class="game-board box1 col-4" id="0"></div>
+                <div class="game-board box2 mid-col col-4" id="1"></div>
+                <div class="game-board box3 col-4" id="2"></div>
+                <div class="game-board box4 mid-row col-4" id="3"></div>
+                <div class="game-board box5 mid-col mid-row col-4" id="4"></div>
+                <div class="game-board box6 mid-row col-4" id="5"></div>
+                <div class="game-board box7 col-4" id="6"></div>
+                <div class="game-board box8 mid-col col-4" id="7"></div>
+                <div class="game-board box9 col-4" id="8"></div>
+            </section>
+          </section>
+          <section class="game-box-bottom">
+            <div class="indicator-boxes">
+              <section class="player-indicator-boxes row">
+                <h2 class="player-indicators current-player" id="player1">Player 1</h2>
+                <h2 class="player-indicators" id="player2">Player 2</h2>
+              </section>
+            </div>
+          </section>
+        </div>
+
+        <!-- right panel with recent game log -->
+        <div class="right-panel">
+          <div class="session-statistics-box">
+            <div class="session-statistics">
+              <h4>Recent Game Log</h4>
+              <hr width="90%" color="#2eb2ff"/>
+
+              <ol class="game-log">
+              </ol>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </body>
+</html>
