@@ -18,6 +18,7 @@
           <div class="sign-in-box">
             <section id="before-sign-in">
               <form id="sign-in">
+                <div class="close-button">X</div>
                 <h4>Sign In!</h4>
                 <hr width="90%" color="#2eb2ff">
                   <div class="form-group">
@@ -56,7 +57,12 @@
             </div>
 
             <section class="signed-in" id="after-sign-in">
-
+              <div class="close-button">X</div>
+              <div class="total-games-box">
+                <h5>Total Games</h5>
+                <hr width="90%" color="#2eb2ff">
+                <h2 class="total-games"></h2>
+              </div>
               <button type="button" class="submit-button" data-toggle="modal" data-target="#myModal">
                 Change Password
               </button>
@@ -78,6 +84,7 @@
                         </div>
                         <div class="form-group">
                           <button class="submit-button" type="submit">Submit</button>
+                          <p id="change-password-messaging"></p>
                         </div>
                       </form>
                     </div>
@@ -103,7 +110,7 @@
           </section>
           <section class="game-box">
             <section class="new-game">
-              <h1 class="game-message">Start A Game!</h1>
+              <h1 class="game-message">Please Sign In To Start A Game!</h1>
               <button class="new-game-button submit-button" disabled>Start Game</button>
             </section>
             <section class="game-parameter inactive-screen row">
@@ -131,7 +138,7 @@
 
           <div class="session-statistics-box">
             <div class="session-statistics">
-              <h4>Session</h4>
+              <h4>Recent Game Log</h4>
               <hr width="90%" color="#2eb2ff"/>
 
               <ol class="game-log">

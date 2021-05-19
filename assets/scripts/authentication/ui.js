@@ -3,36 +3,26 @@
 const store = require('./../store')
 const gameEvents = require('./../game-board/events')
 
-// res = response
 const signUpSuccess = function (res) {
-  // reset the form an show result to user
-  // $('#sign-up').reset()
   $('#sign-up').trigger('reset')
 
-  // messaging
   $('#messaging').text('Welcome New User! Please sign in using your new credentials.')
+  $('#messaging').css('color', '#656565')
 }
 
-// err = error
 const signUpFailure = function (err) {
   $('#messaging').text('Invalid username or password, please try again. Error code: ' + err.status)
   $('#messaging').css('color', 'red')
 }
 
+// hide all pre sign in screens and show after sign in, remove disable for start button
 const signInSuccess = function (res) {
-  // reset the form an show result to user
-  // $('#sign-up').reset()
   $('#sign-in').trigger('reset')
-
-  // create a key on an object
-  // 1. access the key 2. set it equal to something
-  // store['myKey'] = 'some value'
-  // store.myKey = 'some value'
   store.user = res.user
-
-  // messaging
   $('#messaging').text('Signed in! Welcome!')
+  $('#messaging').css('color', '#656565')
 
+  $('.game-message').text('Start a Game!')
   // Display the "after sign in" elements
   $('#after-sign-in').show()
   // Hide the "before sign in" elements
@@ -50,35 +40,36 @@ const signInFailure = function (err) {
 
 const changePasswordSuccess = function () {
   $('#change-password').trigger('reset')
-  $('#messaging').text('Change Password successfully')
+  $('#change-password-messaging').text('Change Password successfully')
+  $('#change-password-messaging').css('color', '#656565')
 }
 
 const changePasswordFailure = function () {
-  $('#messaging').text('Change Password Failed')
-  $('#messaging').css('color', 'red')
+  $('#change-password-messaging').text('Change Password Failed')
+  $('#change-password-messaging').css('color', 'red')
 }
-
-// err = error
-
+// switch back to pre - sign in screens
 const signOutSuccess = function () {
   store.user = null
   $('#messaging').text('Signed Out Successfully!')
-
-  // Display the "before sign in" elements
+  $('#messaging').css('color', '#656565')
   $('#before-sign-in').show()
-  // Hide the "after sign in" elements
   $('#after-sign-in').hide()
   if ($('.new-game').hasClass('inactive-screen')) {
     $('.new-game').toggleClass('inactive-screen')
     $('.game-parameter').toggleClass('inactive-screen')
   }
+  // remove lists , reset player indicator, remove current moves
+  $('li').remove()
   gameEvents.resetGame()
   gameEvents.resetPlayer()
   $('.new-game-button').attr('disabled', 'true')
+  $('.game-message').text('Please Sign In To Start A Game!')
 }
 
 const signOutFailure = function (err) {
   $('#messaging').text('Failed with status: ' + err.status)
+  $('#messaging').css('color', 'red')
 }
 
 module.exports = {

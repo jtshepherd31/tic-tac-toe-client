@@ -4,13 +4,10 @@ const getFormFields = require('./../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
 
-// Sign Up Form Submit Handler
+// function for signing up
 const onSignUp = function (event) {
   // prevent that default
   event.preventDefault()
-
-  // This is a submit event! So the form that was
-  // submitted is the target of the event
 
   // Pull user data from the form
   const data = getFormFields(event.target)
@@ -27,17 +24,11 @@ const onSignIn = function (event) {
   // prevent that default
   event.preventDefault()
 
-  // This is a submit event! So the form that was
-  // submitted is the target of the event
-
   // Pull user data from the form
   const data = getFormFields(event.target)
 
-  // Make a request
   api.signIn(data)
-  // .then is successful api response
     .then(ui.signInSuccess)
-  // .catch is failed api response or any error within signInSuccess
     .catch(ui.signInFailure)
 }
 
@@ -46,14 +37,10 @@ const onShowChangePassword = function (event) {
 }
 
 const onChangePassword = function (event) {
-  // prevent the preventDefault
   event.preventDefault()
-  // get data
   const data = getFormFields(event.target)
 
-  // api request
   api.changePassword(data)
-  // hande res/error
     .then(ui.changePasswordSuccess)
     .catch(ui.changePasswordFailure)
 }
@@ -67,7 +54,6 @@ const onSignOut = function (event) {
 }
 
 module.exports = {
-  // onSignUp: onSignUp
   onSignUp,
   onSignIn,
   onChangePassword,

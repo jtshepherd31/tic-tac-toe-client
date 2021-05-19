@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap');
 
 body {
-  background-color: #efefef;
+  background-color: #c2c2c2;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -14,7 +14,7 @@ body {
 
 .left-panel, .right-panel {
   width: 20%;
-  background-color: #a9a9a9;
+  background-color: #efefef;
 }
 
 .title {
@@ -36,7 +36,7 @@ div.row {
   text-align: center;
   padding: 10px;
   margin-left: 0;
-  color: white;
+  color: #656565;
 }
 
 .session-statistics {
@@ -60,6 +60,10 @@ div.row {
   position: relative;
 }
 
+.close-button {
+  display: none;
+}
+
 .submit-button {
   border-radius: 8px;
   background-color: #2eb2ff;
@@ -69,6 +73,8 @@ div.row {
   height: 30px;
   opacity: 60%;
   transition: 0.4s;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .game-box-top {
@@ -89,7 +95,7 @@ div.row {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #a9a9a9;
+  background-color: #c2c2c2;
   color: white;
 }
 
@@ -196,14 +202,24 @@ div.row {
   border-color: gray;
 }
 
+.new-game-button {
+  margin-top: 15px;
+}
+
 #modal-title {
   text-align: center;
+}
+
+.modal-backdrop {
+  z-index: 1;
 }
 
 .signed-in {
   height: 80%;
   width: 80%;
   margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
 }
 
 .full-page {
@@ -213,20 +229,50 @@ div.row {
 }
 
 .complete {
-  color: lightgreen;
+  color: #319c31;
+  font-weight: bold;
 }
 
 .incomplete {
   color: #ff383f;
+  font-weight: bold;
 }
 
 .new-game {
   text-align: center;
+  width: 50%;
+}
+
+#change-password-messaging {
+  text-align: center;
+  font-size: 16px;
+  margin-top: 15px;
+}
+
+#messaging {
+  text-align: center;
+  color: #656565;
+  font-size: 20px;
+  padding: 12px;
+}
+
+.total-games-box {
+  color: #656565;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+}
+
+.total-games {
+  font-size: 70px;
 }
 
 @media only screen and (max-width: 1050px) {
   body {
-    background-color: lightblue;
+    background-color: #c2c2c2;
   }
 
   .menu-icon {
@@ -239,6 +285,7 @@ div.row {
 
   .game-box-top h1 {
     font-size: 45px;
+    margin-top: 70px;
   }
 
   .right-panel {
@@ -252,18 +299,26 @@ div.row {
   .left-panel {
     z-index: 7;
     position: absolute;
-    background-color: #5f5f5f;
+    background-color: #efefef;
     bottom: 0;
     height: 75%;
-    width: 90%;
+    width: 94%;
     border-radius: 15px 15px 0 0;
     text-align: center;
-    margin: 0 5%;
-    color: white;
+    margin: 0 3%;
     visibility: collapse;
   }
   .game-box {
     z-index: -1;
+  }
+
+  .close-button {
+    display: inline;
+    color: #656565;
+    position: absolute;
+    top: 1%;
+    right: 1%;
+    font-size: 25px;
   }
 
   .player-indicators {

@@ -24,11 +24,13 @@ const showAllGamesFailure = function (err) {
   $('#messaging').css('color', 'red')
 }
 
+// when game is finished or log in occurs, if game log is a success, log that game
 const getLogSuccess = function (res) {
+  $('.total-games').text(res.games.length)
   res.games.forEach(game => {
     const date = new Date(game.createdAt)
     const isComplete = game.over ? 'Complete' : 'Incomplete'
-    $('.game-log').append(`<li>${date.toDateString()} - <span class='${isComplete.toLowerCase()}'>${isComplete}</span></li>`)
+    $('.game-log').prepend(`<li>${date.toDateString()} - <div class='${isComplete.toLowerCase()}'>${isComplete}</div></li>`)
   })
 }
 

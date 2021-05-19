@@ -3,6 +3,7 @@ const store = require('./../store')
 const api = require('./api')
 const ui = require('./ui')
 
+// set values for players, winning formations and set array for game
 const player1 = { value: 'X', color: '#ff383f', name: 'Player 1' }
 const player2 = { value: 'O', color: '#2eb2ff', name: 'Player 2' }
 let currentPlayer = player1
@@ -19,6 +20,7 @@ const winningConditions = [
 ]
 let gameResult
 
+// add the x or o based on which player had clicked and what box
 const onUserSelection = function (event) {
   const indexSelection = event.target.id
   if (gameIndex[indexSelection] === '' && !gameResult) {
@@ -30,13 +32,16 @@ const onUserSelection = function (event) {
     currentPlayer = currentPlayer === player1 ? player2 : player1
     $('.player-indicators').toggleClass('current-player')
   }
+  // reset functions if game results happens
   if (gameResult) {
     resetGame()
     resetPlayer()
     newGame()
+    getGameLog()
   }
 }
 
+// check for three matching values = win, otherwise, tie
 const checkResults = function () {
   winningConditions.forEach(condition => {
     const value1 = gameIndex[condition[0]]
@@ -46,16 +51,19 @@ const checkResults = function () {
       gameResult = currentPlayer.name + ' Wins!'
     }
   })
+  // if there is no empty box left, use default -1 to show no empty strings left
   if (gameIndex.indexOf('') === -1 && !gameResult) {
     gameResult = 'Tie Game!'
   }
 }
 
+// after clicking start game, show game board
 const newGame = function () {
   $('.new-game').toggleClass('inactive-screen')
   $('.game-parameter').toggleClass('inactive-screen')
 }
 
+// reset player indicators so it doesnt start with player 2
 const resetPlayer = function () {
   if (currentPlayer === player2) {
     $('.player-indicators').toggleClass('current-player')
@@ -63,6 +71,7 @@ const resetPlayer = function () {
   }
 }
 
+// function for reset after result
 const resetGame = function () {
   if (gameResult) {
     $('.game-message').text(gameResult + ' Start New Game!')
@@ -74,6 +83,7 @@ const resetGame = function () {
   gameIndex = ['', '', '', '', '', '', '', '', '']
 }
 
+// function based on start game to log start of game and what time
 const onStartGame = function (event) {
   const data = {
     game: {
@@ -89,11 +99,14 @@ const onStartGame = function (event) {
     .catch(ui.startGameFailure)
 }
 
+// get logs for the right side panel based on user
 const getGameLog = function () {
+  $('li').remove()
   api.getAllGamesLog()
     .then(ui.getLogSuccess)
 }
 
+// update game with new piece
 const onUpdateGame = function (indexSelection) {
   const data = {
     game: {
@@ -105,10 +118,9 @@ const onUpdateGame = function (indexSelection) {
     }
   }
   api.updateGame(data, store.game._id)
-  // .then(ui.signOutSuccess)
-  // .catch(ui.updateGameFailure)
 }
 
+// add function to open menu for mobile
 const openMenu = function () {
   if ($('.left-panel').css('visibility') === 'collapse') {
     $('.left-panel').css('visibility', 'visible')
