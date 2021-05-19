@@ -2,7 +2,7 @@
 
 This project allows the user to play games of tic-tac-toe against another user,
 They are able to log in and have a personal log of what games have been
-completed and how many games they have played total
+completed and how many games they have played total.
 
 ## Deploy Link
 
@@ -22,7 +22,8 @@ completed and how many games they have played total
 
 ### Wireframe
 
-![wireframe](https://imgur.com/a/452qlXd)
+![wireframe](https://i.imgur.com/qUg9AS9.png)
+![wireframe](https://i.imgur.com/QycdL67.png)
 
 Sources
 https://www.w3schools.com
