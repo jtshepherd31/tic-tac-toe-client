@@ -23,3 +23,8 @@ completed and how many games they have played total
 ### Wireframe
 
 ![wireframe](https://imgur.com/a/452qlXd)
+
+Sources
+https://www.w3schools.com
+https://developer.mozilla.org/en-US/docs/Web/JavaScript
+https://stackoverflow.com/
